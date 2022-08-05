@@ -5,6 +5,7 @@ Plug 'tpope/vim-sensible'           " Defaults
 " Optics
 Plug 'airblade/vim-gitgutter'               " Show git change hunks to the left
 Plug 'arcticicestudio/nord-vim'             " Matching theme
+Plug 'kyazdani42/nvim-web-devicons'         " Icons for file picker
 Plug 'vim-airline/vim-airline'              " Statusbar
 Plug 'vim-airline/vim-airline-themes'       " Themes
 
@@ -15,8 +16,8 @@ Plug 'mfussenegger/nvim-lint'               " async linter
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
 
 " Integrations
-Plug 'junegunn/fzf' ", { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'                     " Fuzzy filename entry
+Plug 'nvim-lua/plenary.nvim'                " Lua functions
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " instead of FZF
 Plug 'junegunn/gv.vim'                      " Like tig
 Plug 'tpope/vim-fugitive'
 
@@ -93,9 +94,11 @@ nmap <Leader>k :bprev<CR>:redraw<CR>
 " Close Buffer
 nmap <Leader>d :bd<CR>
 " Show buffers
-nmap <silent><leader>b :Buffers<CR>
+nnoremap <silent><leader>b <cmd>Telescope buffers<cr>
 " Open file
-nmap <silent><leader>f :Files<cr>
+nnoremap <silent><leader>f <cmd>Telescope find_files<cr>
+" Grep
+nnoremap <silent><leader>g <cmd>Telescope live_grep<cr>
 " Open quickfix window
 map <silent><leader>c :copen<cr>
 " Open location window
