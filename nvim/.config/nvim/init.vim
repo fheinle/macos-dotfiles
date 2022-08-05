@@ -4,7 +4,7 @@ Plug 'tpope/vim-sensible'           " Defaults
 
 " Optics
 Plug 'airblade/vim-gitgutter'               " Show git change hunks to the left
-Plug 'lifepillar/vim-solarized8'            " Fancy colors
+Plug 'arcticicestudio/nord-vim'             " Matching theme
 Plug 'vim-airline/vim-airline'              " Statusbar
 Plug 'vim-airline/vim-airline-themes'       " Themes
 
@@ -35,11 +35,10 @@ set undolevels=2048
 
 " Look {{{
 set background=dark
-let g:solarized_termtrans=0
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"          " Next 3 lines required for
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"          " Solarized theme in
 set termguicolors                               " Tmux sessions
-autocmd vimenter * ++nested colorscheme solarized8_flat
+colorscheme nord
 set cursorline                                  " Highlight current line
 set number relativenumber                       " Line numbers
 set colorcolumn=80                              " Should wrap here
@@ -110,7 +109,7 @@ map <silent><leader>s :GitGutterStageHunk<CR>
 " Plugins config {{{
 
 " airline {{{
-let g:airline_theme='solarized'
+let g:airline_theme='nord'
 let g:airline_powerline_fonts = 1
 " }}}
 
