@@ -20,7 +20,7 @@ Plug 'tpope/vim-commentary'                 " comment in and out stuff
 Plug 'nvim-lua/plenary.nvim'                " Lua functions
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " instead of FZF
 Plug 'junegunn/gv.vim'                      " Like tig
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'                   " Git shit
 
 call plug#end()
 " }}}
