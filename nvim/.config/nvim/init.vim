@@ -49,6 +49,7 @@ set list                                        " Show whitespace. Weird name
 
 " Editing {{{
 set showmatch                                   " Match pairs of brackets
+set inccommand=split                            " preview replacing
 set matchpairs+=<:>                             " Also on the pointy ones
 set smartindent                                 " Guess when indenting is a good idea
 set expandtab                                   " Spaces instead of tabs
