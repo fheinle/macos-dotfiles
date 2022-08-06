@@ -12,7 +12,8 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 " Behaviour
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
-Plug 'mfussenegger/nvim-lint'               " async linter
+Plug 'folke/trouble.nvim'                   " Nicer diagnostics
+Plug 'neovim/nvim-lspconfig'                " language servers
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
 
@@ -88,6 +89,8 @@ nnoremap j gj
 nnoremap k gk
 noremap j gj
 noremap k gk
+" find references to object under cursor
+nmap + :Trouble lsp_references<CR>
 " Next buffer
 nmap <Leader>j :bnext<CR>:redraw<CR>
 " Previous Buffer
@@ -104,6 +107,8 @@ nnoremap <silent><leader>g <cmd>Telescope live_grep<cr>
 map <silent><leader>c :copen<cr>
 " Open location window
 map <silent><leader>l :lopen<cr>
+" Open trouble window
+map <silent><leader>t :TroubleToggle<cr>
 " Fold unchanged parts
 map <silent><leader>G :GitGutterFold<CR>
 " Git stage
@@ -157,6 +162,15 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
 }
+EOF
+
+" LSP
+lua << EOF
+require('lspconfig')['pyright'].setup{}
+require('lspconfig')['yamlls'].setup{}
+require('lspconfig')['solargraph'].setup{}
+
+local opts = { noremap=true, silent=true }
 EOF
 
 " }}}
