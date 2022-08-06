@@ -13,6 +13,8 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'neovim/nvim-lspconfig'                " language servers
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
