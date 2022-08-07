@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 " Behaviour
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
+Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
