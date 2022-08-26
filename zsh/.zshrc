@@ -27,6 +27,7 @@ alias ls="exa --header --long --classify --icons --color=auto --all --sort modif
 alias l="exa --grid --classify --icons --color=auto --all --sort name"
 alias k="kubectl"
 alias vi="nvim"
+alias datacore="LANG=en_US.UTF-8 mosh datacore"
 # }}}
 
 # {{{ Env
