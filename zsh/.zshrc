@@ -25,6 +25,7 @@ zstyle ':completion:*:*:*:default' menu yes select search interactive
 # Aliases {{{
 alias ls="exa --header --long --classify --icons --color=auto --all --sort modified --time-style iso"
 alias l="exa --grid --classify --icons --color=auto --all --sort name"
+alias k="kubectl"
 alias vi="nvim"
 # }}}
 
@@ -35,6 +36,7 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlightin
 # }}}
 
 # Things that want to go last {{{
+source /opt/homebrew/share/zsh/site-functions/_flux
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # }}}
