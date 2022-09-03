@@ -86,12 +86,6 @@ imap jj <Esc>
 nnoremap <Leader>w :w<CR>
 " Write and Quit
 nnoremap <Leader>x :x<CR>
-" Operate on visual lines
-nnoremap j gj
-" Instead of actual lines
-nnoremap k gk
-noremap j gj
-noremap k gk
 " find references to object under cursor
 nmap + :Trouble lsp_references<CR>
 " Next buffer
