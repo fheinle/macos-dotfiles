@@ -48,7 +48,7 @@ colorscheme nord
 set cursorline                                  " Highlight current line
 set number relativenumber                       " Line numbers
 set colorcolumn=80                              " Should wrap here
-set scrolloff=7
+set scrolloff=7                                 " Show 7 lines below cursor
 set list                                        " Show whitespace. Weird name
 " }}}
 
