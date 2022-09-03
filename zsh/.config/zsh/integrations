@@ -1,0 +1,9 @@
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. /opt/homebrew/etc/profile.d/z.sh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval $(starship init zsh)

@@ -1,0 +1,5 @@
+# Things that want to go last
+source /opt/homebrew/share/zsh/site-functions/_flux
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# vim: set ft=zsh
