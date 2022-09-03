@@ -32,6 +32,7 @@ zstyle ':completion:*:*:*:default' menu yes select search interactive
 # Aliases {{{
 alias ls="exa --header --long --classify --icons --color=auto --all --sort modified --time-style iso"
 alias l="exa --grid --classify --icons --color=auto --all --sort name"
+alias tree="ls --tree"
 alias k="kubectl"
 alias vi="nvim"
 alias datacore="LANG=en_US.UTF-8 mosh datacore"
