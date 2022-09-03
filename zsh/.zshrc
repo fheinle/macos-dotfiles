@@ -15,7 +15,13 @@ export LS_COLORS
 # }}}
 
 # Completion Settings {{{
-autoload -Uz compinit && compinit -i
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit -i
+fi
 # no usernames in ssh completion
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 zstyle ':completion:*:ssh:*:hosts' ignored-patterns broadcasthost
