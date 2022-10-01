@@ -4,4 +4,5 @@ alias tree="ls --tree"
 alias k="kubectl"
 alias vi="nvim"
 alias datacore="LANG=en_US.UTF-8 mosh datacore"
+alias gita="python3 -m gita"
 # vim: set ft=zsh
