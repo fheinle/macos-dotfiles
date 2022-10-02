@@ -1,3 +1,4 @@
+export PATH=/Users/florian/.local/bin/:$PATH
 export GOPATH=/home/florian/dev/go
 export SSH_AUTH_SOCK=/Users/florian/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
