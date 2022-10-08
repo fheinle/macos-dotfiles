@@ -3,3 +3,7 @@ truncate_to_repo=true
 truncation_length=0
 [time]
 disabled=false
+[battery]
+disabled=true
+[cmd_duration]
+show_notifications = true
