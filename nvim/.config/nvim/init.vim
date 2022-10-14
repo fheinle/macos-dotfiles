@@ -16,15 +16,19 @@ Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'neovim/nvim-lspconfig'                " language servers
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
+Plug 'tpope/vim-vinegar'                    " Better NetRW
 
 " Integrations
 Plug 'nvim-lua/plenary.nvim'                " Lua functions
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " instead of FZF
 Plug 'junegunn/gv.vim'                      " Like tig
 Plug 'tpope/vim-fugitive'                   " Git shit
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Filetypes
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 " }}}
@@ -41,6 +45,7 @@ set undolevels=2048
 
 " Look {{{
 set background=dark
+set signcolumn=yes                              " Always show sign column
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"          " Next 3 lines required for
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"          " Solarized theme in
 set termguicolors                               " Tmux sessions
@@ -160,14 +165,4 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
-
-" LSP
-lua << EOF
-require('lspconfig')['pyright'].setup{}
-require('lspconfig')['yamlls'].setup{}
-require('lspconfig')['solargraph'].setup{}
-
-local opts = { noremap=true, silent=true }
-EOF
-
 " }}}
