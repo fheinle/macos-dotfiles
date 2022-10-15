@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 
 " Behaviour
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
+Plug 'christoomey/vim-tmux-navigator'       " Navigate tmux
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
 Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
