@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+readarray -t ssh_list < /dev/stdin
+split_list=()
+for ssh_entry in "${ssh_list[@]:1}"; do
+    split_list+=( split-pane ssh "$ssh_entry" ';' )
+done
+
+tmux new-window ssh "${ssh_list[0]}" ';' \
+    "${split_list[@]}" \
+    select-layout tiled ';'
