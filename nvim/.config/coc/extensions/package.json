@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "coc-yaml": ">=1.8.0",
+    "coc-diagnostic": ">=0.23.4",
+    "coc-sh": ">=0.7.0",
+    "coc-solargraph": ">=1.2.4",
+    "coc-json": ">=1.6.1"
+  }
+}
