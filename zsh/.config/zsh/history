@@ -1,1 +1,4 @@
 setopt share_history
+HISTFILE=$HOME/.history
+HISTSIZE=30000
+SAVEHIST=30000

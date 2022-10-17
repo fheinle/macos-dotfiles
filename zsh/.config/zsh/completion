@@ -8,5 +8,4 @@ fi
 # no usernames in ssh completion
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 zstyle ':completion:*:ssh:*:hosts' ignored-patterns broadcasthost
-zstyle ':completion:*:*:*:default' menu yes select search interactive
 # vim: set ft=zsh
