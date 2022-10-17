@@ -17,6 +17,7 @@ Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'nathanaelkane/vim-indent-guides'      " indent guides, good for yaml
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
 Plug 'tpope/vim-vinegar'                    " Better NetRW
@@ -116,6 +117,8 @@ map <silent><leader>t :TroubleToggle<cr>
 map <silent><leader>G :GitGutterFold<CR>
 " Git stage
 map <silent><leader>s :GitGutterStageHunk<CR>
+" Toggle Indent Guides
+map <silent><leader>i :IndentGuidesToggle<CR>
 " }}}
 
 " Plugins config {{{
