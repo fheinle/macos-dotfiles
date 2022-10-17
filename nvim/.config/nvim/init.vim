@@ -1,6 +1,6 @@
 " Plugins {{{
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-sensible'           " Defaults
+Plug 'tpope/vim-sensible'                   " Defaults
 
 " Optics
 Plug 'airblade/vim-gitgutter'               " Show git change hunks to the left
@@ -11,26 +11,29 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 
 " Behaviour
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
-Plug 'christoomey/vim-tmux-navigator'       " Navigate tmux
+Plug 'christoomey/vim-tmux-navigator'       " Tmux integration
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
 Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'nathanaelkane/vim-indent-guides'      " indent guides, good for yaml
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
 Plug 'tpope/vim-vinegar'                    " Better NetRW
 
+
 " Integrations
+Plug 'junegunn/gv.vim'                      " Like tig
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'                " Lua functions
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " instead of FZF
-Plug 'junegunn/gv.vim'                      " Like tig
 Plug 'tpope/vim-fugitive'                   " Git shit
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Filetypes
-Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform'               " Terraform formatting and linting
+Plug 'rhadley-recurly/vim-terragrunt'       " Terragrunt
+Plug 'rodjek/vim-puppet'                    " Puppet
 
 call plug#end()
 " }}}
@@ -47,7 +50,6 @@ set undolevels=2048
 
 " Look {{{
 set background=dark
-set signcolumn=yes                              " Always show sign column
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"          " Next 3 lines required for
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"          " Solarized theme in
 set termguicolors                               " Tmux sessions
@@ -73,6 +75,7 @@ set formatoptions=qrn1                          " Comment formatting
 vnoremap < <gv
 " In visual mode
 vnoremap > >gv
+inoremap <silent><expr> <c-space> coc#refresh() " Tab completion
 " }}}
 
 " Folding {{{
@@ -87,10 +90,10 @@ vnoremap <Space> za
 " Keyboard {{{
 let mapleader = ","
 map , <Leader>
-" jj is Escape, for the iPad
-imap jj <Esc>
-" Write
+" Write 
 nnoremap <Leader>w :w<CR>
+" Write as root
+cmap w!! w !sudo tee > /dev/null %
 " Write and Quit
 nnoremap <Leader>x :x<CR>
 " find references to object under cursor
@@ -132,6 +135,10 @@ let g:airline_powerline_fonts = 1
 let g:rooter_patterns = ['.editorconfig', '.git', '.git/']
 let g:rooter_cd_cmd="lcd"
 " }}}
+
+" terraform {{{
+let g:terraform_fmt_on_save = 1
+"}}}
 
 " }}}
 
