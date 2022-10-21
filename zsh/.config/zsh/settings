@@ -7,3 +7,4 @@ setopt longlistjobs
 setopt noshwordsplit
 setopt notify
 setopt pushd_ignore_dups
+unsetopt BEEP
