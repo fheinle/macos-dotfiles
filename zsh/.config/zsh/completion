@@ -5,6 +5,11 @@ then
   autoload -Uz compinit
   compinit -i
 fi
+
+# Expand aliases with tab
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' completer _expand_alias _complete _approximate
+
 # no usernames in ssh completion
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 zstyle ':completion:*:ssh:*:hosts' ignored-patterns broadcasthost
