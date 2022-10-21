@@ -6,4 +6,5 @@ source /opt/homebrew/etc/profile.d/z.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+batpipe | source /dev/stdin
 eval $(starship init zsh)
