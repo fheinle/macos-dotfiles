@@ -1,0 +1,9 @@
+setopt auto_cd
+setopt auto_pushd
+setopt extended_glob
+setopt hash_list_all
+setopt interactivecomments
+setopt longlistjobs
+setopt noshwordsplit
+setopt notify
+setopt pushd_ignore_dups
