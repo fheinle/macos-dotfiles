@@ -5,10 +5,9 @@
 [commit]
     verbose = true
 [core]
-    attributesfile = /home/florian/.gitattributes
+    attributesfile = ~/.gitattributes
     editor = nvim
-    excludesfile = /home/florian/.gitignore
-    excludesfile = /home/florian/.gitignore-global
+    excludesfile = ~/.gitignore-global
     pager = delta
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [diff "dyff"]
