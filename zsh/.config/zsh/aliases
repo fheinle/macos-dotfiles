@@ -8,4 +8,13 @@ alias tree="ls --tree"
 alias vi="nvim"
 alias vimconfig="vim $HOME/.config/nvim/init.vim"
 alias zshrc="vim $HOME/.config/zsh"
+kgs () {
+    if (kubectl get secret $@ &>/dev/null);
+    then
+        kubectl get secret $@ -o json|jq ".data|map_values(@base64d)"
+    else
+        echo "Secret not found: $@. Did you specify the correct namespace?" >> /dev/stderr
+    fi
+}
+alias kubectl=kubecolor
 # vim: set ft=zsh
