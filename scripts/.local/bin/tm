@@ -1,13 +1,30 @@
 #!/bin/bash
 
-set -e
+# Read hostnames from STDIN
+hostnames=()
+while IFS= read -r line; do
+    hostnames+=("$line")
+done
+# Create a new tmux window
+tmux new-window
 
-readarray -t ssh_list < /dev/stdin
-split_list=()
-for ssh_entry in "${ssh_list[@]:1}"; do
-    split_list+=( split-pane ssh "$ssh_entry" ';' )
+# Calculate the size of each pane
+num_panes=${#hostnames[@]}
+pane_height=$((100 / num_panes))  # Equal height for each pane
+
+# Split the window into panes
+for ((i=0; i<num_panes; i++)); do
+    if ((i > 0)); then
+        # Split horizontally for subsequent panes
+        tmux split-window -h
+    fi
+    tmux send-keys "echo ssh ${hostnames[i]}" C-m
+
+    # Resize the pane
+    if ((i < num_panes - 1)); then
+        tmux resize-pane -y "$pane_height"
+    fi
 done
 
-tmux new-window ssh "${ssh_list[0]}" ';' \
-    "${split_list[@]}" \
-    select-layout tiled ';'
+# Set the layout to tiled
+tmux select-layout tiled
