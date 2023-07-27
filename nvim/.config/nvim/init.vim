@@ -13,12 +13,11 @@ Plug 'vim-airline/vim-airline-themes'       " Themes
 Plug 'airblade/vim-rooter'                  " Change cwd to .git root of project
 Plug 'christoomey/vim-tmux-navigator'       " Tmux integration
 Plug 'editorconfig/editorconfig-vim'        " Respect .editorconfig
-Plug 'ellisonleao/glow.nvim'                " markdown preview
 Plug 'folke/trouble.nvim'                   " Nicer diagnostics
 Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 Plug 'nathanaelkane/vim-indent-guides'      " indent guides, good for yaml
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'tag': 'v0.7.2'}
 Plug 'tpope/vim-commentary'                 " comment in and out stuff
 Plug 'tpope/vim-vinegar'                    " Better NetRW
 
@@ -27,7 +26,7 @@ Plug 'tpope/vim-vinegar'                    " Better NetRW
 Plug 'junegunn/gv.vim'                      " Like tig
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'                " Lua functions
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' } " instead of FZF
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' } " instead of FZF
 Plug 'tpope/vim-fugitive'                   " Git shit
 
 " Filetypes
