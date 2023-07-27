@@ -1,10 +1,9 @@
 source /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Colorful search with fd for FZF
+FZF_DEFAULT_COMMAND="fd --type file --color always"
+FZF_TMUX_OPTS='-p80%,60%'
 
 source /opt/homebrew/etc/profile.d/z.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-batpipe | source /dev/stdin
 eval $(starship init zsh)
