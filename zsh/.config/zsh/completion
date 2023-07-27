@@ -5,6 +5,8 @@ then
   autoload -Uz compinit
   compinit -i
 fi
+source /opt/homebrew/opt/fzf/shell/completion.zsh
+source /opt/homebrew/opt/zsh-autosuggestions/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Expand aliases with tab
 zstyle ':completion:*' expand prefix suffix
@@ -13,6 +15,7 @@ zstyle ':completion:*' completer _expand_alias _complete _approximate
 # no usernames in ssh completion
 zstyle ':completion:*:ssh:argument-1:*' tag-order hosts
 zstyle ':completion:*:ssh:*:hosts' ignored-patterns broadcasthost
+#zstyle ':completion:*:*:*:default' menu yes select search interactive
 
 # Preview ls
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
