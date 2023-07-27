@@ -49,9 +49,11 @@ set undolevels=2048
 
 " Look {{{
 set background=dark
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"          " Next 3 lines required for
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"          " Solarized theme in
-set termguicolors                               " Tmux sessions
+" if exists('+termguicolors')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
 colorscheme nord
 set cursorline                                  " Highlight current line
 set number relativenumber                       " Line numbers
