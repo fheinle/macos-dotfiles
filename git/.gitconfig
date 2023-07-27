@@ -2,6 +2,7 @@
     l = log --oneline --decorate -n 15 # Output 15 commits, one per line
     lu = log --oneline @{u}            # List unpushed commits
     out = diff @{u}                    # Show unpushed changes
+    root = rev-parse --show-toplevel
 [commit]
     verbose = true
 [core]
